@@ -5,6 +5,7 @@ on:
       - master
     paths:
       - 'container/**'
+      - '.github/workflows/my-workflow-file.yml'
 defaults:
   run:
     working-directory: container
