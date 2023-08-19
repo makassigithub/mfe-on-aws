@@ -4,9 +4,12 @@ import { createMemoryHistory, createBrowserHistory } from 'history'
 
 import App from './app';
 
-const mount = (el, { onNavigate, defaultHistory }) => {
+const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
     //Default history is only provided in development mode
-    const history = defaultHistory || createMemoryHistory();
+    const history = defaultHistory || createMemoryHistory({
+        initialEntries:[initialPath]
+    });
+
     ReactDOM.render(
         <App history={history}/>, el
     )
