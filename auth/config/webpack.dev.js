@@ -8,20 +8,23 @@ const commonConfig = require('./webpack.common');
 const devConfig = {
     mode: 'development',
     output:{
-        publicPath:'http://localhost:8081/'
+        publicPath:'http://localhost:8082/'
     },
     devServer:{
-        port: 8081,
-        historyApiFallback:{
-            index:'index.html'
-        }
+        port: 8082,
+        historyApiFallback: true,
+        /* historyApiFallback:{
+            // TO investigate: deeper paths like /auth/signin won't work unless the
+            // '/' before the index.html or historyApiFallback: true,
+            index:'/index.html'
+        } */
     },
     plugins:[
         new ModuleFederationPluging({
-            name: 'marketing',
+            name: 'auth',
             filename: 'remoteEntry.js',
             exposes:{
-                './MarketingApp': './src/bootstrap.js'
+                './AuthApp': './src/bootstrap.js'
             },
             shared:packageJson.dependencies
         }),
