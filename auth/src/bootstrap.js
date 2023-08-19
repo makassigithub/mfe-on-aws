@@ -10,7 +10,7 @@ const mount = (el, { onNavigate, onSignIn, defaultHistory, initialPath }) => {
         initialEntries:[initialPath]
     });
 
-        // The history.listen() receives a callback and calls it by providing 
+    // The history.listen() receives a callback and calls it by providing 
     // the location object to it when the history changes
     if(onNavigate){
         history.listen(onNavigate);
