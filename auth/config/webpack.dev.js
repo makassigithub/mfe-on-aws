@@ -12,12 +12,12 @@ const devConfig = {
     },
     devServer:{
         port: 8082,
-        historyApiFallback: true,
-        /* historyApiFallback:{
+        //historyApiFallback: true,
+        historyApiFallback:{
             // TO investigate: deeper paths like /auth/signin won't work unless the
             // '/' before the index.html or historyApiFallback: true,
-            index:'/index.html'
-        } */
+            index:'index.html'
+        }
     },
     plugins:[
         new ModuleFederationPluging({
