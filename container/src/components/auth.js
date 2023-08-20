@@ -6,7 +6,6 @@ import { mount } from "auth/AuthApp";
 export default ({ onSignIn }) => {
     const ref = useRef(null);
     const history = useHistory()
-    console.log(history.location.pathname);
 
     useEffect(()=>{
        const { onParentNavigate } =  mount(ref.current,

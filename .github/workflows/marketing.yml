@@ -5,7 +5,7 @@ on:
       - master
     paths:
       - 'marketing/**'
-      - '.github/workflows/my-workflow-file.yml'
+      - '.github/workflows/martketing.yml'
 defaults:
   run:
     working-directory: marketing
